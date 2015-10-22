@@ -1,0 +1,42 @@
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = com.appsng.multiplecontactselection                               // Maven Group ID for the artifact
+
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+                groupId 'com.appsng.multiplecontactselection'
+                artifactId '0.0.1'
+
+                // Add your description here
+                name 'Multiple Contact Selection'
+                description 'Selecting multiple contact from the phone book'
+                url 'https://github.com/akinmobile/multiple-contact-picker'
+
+                // Set your license
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'gasforreal'
+                        name 'Akinsete Sunday'
+                        email 'gasforreal@gmail.com'
+                    }
+                }
+                scm {
+                    connection 'https://github.com/akinmobile/multiple-contact-picker'
+                    developerConnection 'https://github.com/akinmobile/multiple-contact-picker.git'
+                    url 'https://github.com/akinmobile/multiple-contact-picker'
+
+                }
+            }
+        }
+    }
+}
