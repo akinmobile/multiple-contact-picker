@@ -1,4 +1,29 @@
 apply plugin: 'com.android.library'
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'multiple-contact'
+
+    publishedGroupId = 'com.appsng.multiplecontactselection'
+    libraryName = 'Multiple Contact Select'
+    artifact = 'multiple-contact'
+
+    libraryDescription = 'A library for slecting multiple phone numbers from the phone book'
+
+    siteUrl = 'https://github.com/akinmobile/multiple-contact-picker'
+    gitUrl = 'https://github.com/akinmobile/multiple-contact-picker.git'
+
+    libraryVersion = '0.0.1'
+
+    developerId = 'gasforreal'
+    developerName = 'Akinsete Sunday'
+    developerEmail = 'gasforreal@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+
 
 android {
     compileSdkVersion 23
@@ -19,8 +44,8 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.android.support:design:23.0.1'
+
+
 }

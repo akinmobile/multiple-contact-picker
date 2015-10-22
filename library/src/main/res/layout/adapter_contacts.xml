@@ -13,7 +13,7 @@
         android:layout_marginRight="10dip"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/user" />
+        android:src="@mipmap/user" />
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -31,7 +31,7 @@
 	    android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:visibility="gone"
-        android:src="@drawable/ic_launcher" />
+        android:src="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/name"
