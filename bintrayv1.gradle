@@ -1,5 +1,5 @@
 
-version = libraryVersion
+version = '0.0.1'
 
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
@@ -30,16 +30,16 @@ bintray {
 
     configurations = ['archives']
     pkg {
-        repo = bintrayRepo
-        name = bintrayName
-        desc = libraryDescription
-        websiteUrl = siteUrl
-        vcsUrl = gitUrl
-        licenses = allLicenses
+        repo = 'maven'
+        name = 'multiple-contact'
+        desc = 'A library for slecting multiple phone numbers from the phone book'
+        websiteUrl = 'https://github.com/akinmobile/multiple-contact-picker'
+        vcsUrl = 'https://github.com/akinmobile/multiple-contact-picker.git'
+        licenses = ["Apache-2.0"]
         publish = true
         publicDownloadNumbers = true
         version {
-            desc = libraryDescription
+            desc = 'A library for slecting multiple phone numbers from the phone book'
             gpg {
                 sign = true //Determines whether to GPG sign the files. The default is false
                 passphrase = properties.getProperty("bintray.gpg.password")
@@ -48,3 +48,27 @@ bintray {
         }
     }
 }
+
+//ext {
+//    bintrayRepo = 'maven'
+//    bintrayName = 'multiple-contact'
+//
+//    publishedGroupId = 'com.appsng.multiplecontactselection'
+//    libraryName = 'Multiple Contact Select'
+//    artifact = 'multiple-contact'
+//
+//    libraryDescription = 'A library for slecting multiple phone numbers from the phone book'
+//
+//    siteUrl = 'https://github.com/akinmobile/multiple-contact-picker'
+//    gitUrl = 'https://github.com/akinmobile/multiple-contact-picker.git'
+//
+//    libraryVersion = '0.0.1'
+//
+//    developerId = 'gasforreal'
+//    developerName = 'Akinsete Sunday'
+//    developerEmail = 'gasforreal@gmail.com'
+//
+//    licenseName = 'The Apache Software License, Version 2.0'
+//    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//    allLicenses = ["Apache-2.0"]
+//}
