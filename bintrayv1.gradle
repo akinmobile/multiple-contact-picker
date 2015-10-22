@@ -7,8 +7,10 @@ task sourcesJar(type: Jar) {
 }
 
 task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    afterEvaluate {
+        source = android.sourceSets.main.java.srcDirs
+        classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    }
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
@@ -48,27 +50,3 @@ bintray {
         }
     }
 }
-
-//ext {
-//    bintrayRepo = 'maven'
-//    bintrayName = 'multiple-contact'
-//
-//    publishedGroupId = 'com.appsng.multiplecontactselection'
-//    libraryName = 'Multiple Contact Select'
-//    artifact = 'multiple-contact'
-//
-//    libraryDescription = 'A library for slecting multiple phone numbers from the phone book'
-//
-//    siteUrl = 'https://github.com/akinmobile/multiple-contact-picker'
-//    gitUrl = 'https://github.com/akinmobile/multiple-contact-picker.git'
-//
-//    libraryVersion = '0.0.1'
-//
-//    developerId = 'gasforreal'
-//    developerName = 'Akinsete Sunday'
-//    developerEmail = 'gasforreal@gmail.com'
-//
-//    licenseName = 'The Apache Software License, Version 2.0'
-//    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-//    allLicenses = ["Apache-2.0"]
-//}
