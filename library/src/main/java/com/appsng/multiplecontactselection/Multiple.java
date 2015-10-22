@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Html;
+import android.support.v7.widget.Toolbar;
 import android.util.SparseBooleanArray;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,6 +29,7 @@ public class Multiple extends AppCompatActivity {
 	ArrayList<String> selected_phones = new ArrayList<String>();
     static final int DONE = Menu.FIRST;
     android.app.ActionBar acBar;
+	Toolbar toolbar;
     
     Context context;
 
@@ -38,14 +39,20 @@ public class Multiple extends AppCompatActivity {
 
 		super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacts);
-        
-        listView = (ListView)findViewById(R.id.contact_list);
-        
+
+		toolbar = (Toolbar)findViewById(R.id.toolbar);
+		listView = (ListView)findViewById(R.id.contact_list);
+
         context = getApplicationContext();
         acBar = getActionBar();
-        
-        acBar.setTitle("Select Contact");
-        acBar.setDisplayHomeAsUpEnabled(true);
+
+
+		if(toolbar!= null){
+			setSupportActionBar(toolbar);
+			getSupportActionBar().setTitle("Select Contact");
+		}
+
+        //acBar.setDisplayHomeAsUpEnabled(true);
         
         FetchContactonBackground();
 	}
@@ -154,8 +161,8 @@ public class Multiple extends AppCompatActivity {
     		 selected_phones.add(g);
     		 selected++;
     	 }
-    	getActionBar().setSubtitle(Html.fromHtml("<font color='#FFFFFF'>"+selected+" selected</font>"));
-	}
+	   getSupportActionBar().setTitle(selected+" selected");
+   }
 
 
 	@Override
